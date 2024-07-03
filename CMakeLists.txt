@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CXX_STANDARD_REQUIRED ON)
 
 add_library(slave SHARED)
-target_sources(slave PRIVATE slave.cpp)
+target_sources(slave
+    PRIVATE slave.cpp
+    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/slave.h>)
 
 
