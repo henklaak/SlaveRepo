@@ -10,7 +10,9 @@ set(CXX_STANDARD_REQUIRED ON)
 
 add_library(slave SHARED)
 target_sources(slave
-    PRIVATE slave.cpp
-    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/slave.h>)
+    PRIVATE slave.cpp)
 
+target_include_directories(slave
+  PUBLIC
+  $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>)
 
