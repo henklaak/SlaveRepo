@@ -16,3 +16,6 @@ target_include_directories(slave
   PUBLIC
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>)
 
+add_executable(slave_generate)
+target_sources(slave_generate
+    PRIVATE slave_generate.cpp)
